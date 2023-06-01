@@ -5,7 +5,12 @@ gcloud builds submit --tag gcr.io/dcdingprject/hello-bang .
 
 gcloud run deploy hw-cloudrun --image gcr.io/dcdingprject/hello-bang:latest --region  asia-southeast2 --allow-unauthenticated
 
-// gcloud run services replace service.yaml
+gcloud run services replace service.yaml
+
+gcloud iam service-accounts add-iam-policy-binding \
+  279495356623-compute@developer.gserviceaccount.com \
+  --member="serviceAccount:279495356623@cloudbuild.gserviceaccount.com" \
+  --role="roles/iam.serviceAccountUser"
 ```
 
 ## Prepare to CI/CD
