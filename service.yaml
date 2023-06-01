@@ -1,0 +1,16 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  annotations:
+    run.googleapis.com/launch-stage: BETA
+  name: hw-cloudrun
+spec:
+  template:
+    metadata:
+      annotations:
+        run.googleapis.com/execution-environment: gen1
+    spec:
+      containers:
+        - image: gcr.io/dcdingprject/hello-bang:v1.0
+          ports:
+            - containerPort: 3000
