@@ -19,6 +19,7 @@ steps:
         "gcr.io/$PROJECT_ID/hello-bang:$COMMIT_SHA",
         "--region",
         "asia-southeast2",
+        "--allow-unauthenticated",
       ]
 
 images:
